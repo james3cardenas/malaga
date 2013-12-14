@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.14'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'devise'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,9 +23,11 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'haml'
+gem 'omniauth-youtube', :git => 'git://github.com/jamiew/omniauth-youtube.git'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

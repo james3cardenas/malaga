@@ -1,7 +1,20 @@
 Malaga::Application.routes.draw do
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
+  root :to => 'videos#index'
 
+resources :videos
+
+match '/show', :to => 'videos#show', :as => :show
+match '/logout', :to => 'users#logout', :as => :logout
+devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+devise_scope :user do
+  get 'sign_in', :to => 'devise/sessions#new', :as => :new_session
+  get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+end
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

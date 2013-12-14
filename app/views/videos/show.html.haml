@@ -1,0 +1,7 @@
+%html
+  %head
+  %body
+    %h1 Welcome , #{@user_name.name}
+
+
+    =link_to "Logout", "/logout", :method => :delete, :confirm => "Are you sure you wish to logout?"
